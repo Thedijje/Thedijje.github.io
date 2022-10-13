@@ -295,7 +295,7 @@ h6 {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 550px) {
   #hero {
     background: url("../img/dheeraj-hero-image-mobile.jpeg") top right no-repeat;
   }
