@@ -11,7 +11,8 @@
   forms.forEach( function(e) {
     e.addEventListener('submit', function(event) {
       event.preventDefault();
-
+      alert('Please contact directly via  email/Phone. Thank you');
+      return true;
       let thisForm = this;
 
       let action = thisForm.getAttribute('action');

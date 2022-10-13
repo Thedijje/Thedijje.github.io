@@ -295,6 +295,12 @@ h6 {
   }
 }
 
+@media (max-width: 720px) {
+  #hero {
+    background: url("../img/dheeraj-hero-image-mobile.jpeg") top right no-repeat;
+  }
+}
+
 #hero:before {
   content: "";
   background: rgba(255, 255, 255, 0.8);
