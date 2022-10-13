@@ -14,7 +14,7 @@
     "prefer_related_applications": false,
     "icons": [
         {
-            "src": "/assets/img/display-picture-dheeraj-jha.png",
+            "src": "https://thedijje.com/assets/img/display-picture-dheeraj-jha.png",
             "type": "image/png",
             "sizes": "200x203"
         }
