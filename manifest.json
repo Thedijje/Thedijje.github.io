@@ -7,14 +7,14 @@
     "start_url": "https://thedijje.com/",
     "short_name": "Thedijje",
     "theme_color": "#2c3e50",
-    "description": "Hi, I am Dheeraj jha, Sr Lead developer at CTE International Gurgaon. Connect me for your business need and advice for App backend, API, PHP/Codeigniter/eCommerce based web app/Web APIs for your mobile applications.",
+    "description": "Hi, I am Dheeraj jha, DevOps Engineer and Software Architect with 7+ Years of experience. Connect me for your business need and advice for App backend, API, PHP/Codeigniter/eCommerce based web app/Web APIs for your mobile applications.",
     "orientation": "any",
     "background_color": "transparent",
     "related_applications": [],
     "prefer_related_applications": false,
     "icons": [
         {
-            "src": "/images/assets/img/profile.png",
+            "src": "/assets/img/display-picture-dheeraj-jha.png",
             "type": "image/png",
             "sizes": "200x203"
         }
