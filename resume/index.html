@@ -42,6 +42,12 @@
         <embed src="../assets/document/Dheeraj-resume.pdf" id="pdf-embed" class="resume_viewport">
     </div>
 
+    <div id="pdf-container">
+        <object id="pdf-object" data="../assets/document/Dheeraj-resume.pdf" class="resume_viewport" type="application/pdf">
+            <p>PDF viewer not available. <a href="../assets/document/Dheeraj-resume.pdf">Click here to view the PDF</a></p>
+        </object>
+    </div>
+
     <style>
         .resume_viewport{
             width:100%;
@@ -49,30 +55,27 @@
         }
     </style>
 
-    <script>
-        function supportsPDFInEmbed() {
-            // Create a temporary embed element
-            const tempEmbed = document.createElement('embed');
-            
-            // Check if the browser can play the 'application/pdf' type
-            const canPlayPDF = tempEmbed.canPlayType('application/pdf') === 'probably';
-            
-            return canPlayPDF;
-        }
+<script>
+    function supportsPDFInObject() {
+        // Create a temporary object element
+        const tempObject = document.createElement('object');
+        
+        // Check if the browser supports the 'application/pdf' type
+        const canEmbedPDF = tempObject.canPlayType('application/pdf') === 'maybe' || tempObject.canPlayType('application/pdf') === 'probably';
+        
+        return canEmbedPDF;
+    }
 
-        window.onload = function() {
-            const pdfEmbed = document.getElementById('pdf-embed');
+    window.onload = function() {
+        const pdfObject = document.getElementById('pdf-object');
+
+        if (!supportsPDFInObject()) {
+            // Redirect to the PDF URL if embedding is not supported
             const pdfUrl = '../assets/document/Dheeraj-resume.pdf';
-
-            if (!supportsPDFInEmbed()) {
-                // Redirect to the PDF URL if embedding is not supported
-                window.location.href = pdfUrl;
-            } else {
-                // Set the PDF URL as the embed source
-                pdfEmbed.src = pdfUrl;
-            }
-        };
-        </script>
+            window.location.href = pdfUrl;
+        }
+    };
+    </script>
 
 </body>
 </html>
