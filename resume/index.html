@@ -51,25 +51,25 @@
 
     <script>
         function supportsPDFInEmbed() {
-            // Create a temporary iframe element
-            const tempIframe = document.createElement('embed');
+            // Create a temporary embed element
+            const tempEmbed = document.createElement('embed');
             
-            // Check if the browser supports the 'application/pdf' MIME type
-            const supportsPDF = tempEmbed.type === 'application/pdf';
+            // Check if the browser can play the 'application/pdf' type
+            const canPlayPDF = tempEmbed.canPlayType('application/pdf') === 'probably';
             
-            return supportsPDF;
+            return canPlayPDF;
         }
 
         window.onload = function() {
             const pdfEmbed = document.getElementById('pdf-embed');
             const pdfUrl = '../assets/document/Dheeraj-resume.pdf';
 
-            if (supportsPDFInEmbed()) {
-                // Set the PDF URL as the iframe source
-                pdfEmbed.src = pdfUrl;
-            } else {
+            if (!supportsPDFInEmbed()) {
                 // Redirect to the PDF URL if embedding is not supported
                 window.location.href = pdfUrl;
+            } else {
+                // Set the PDF URL as the embed source
+                pdfEmbed.src = pdfUrl;
             }
         };
         </script>
