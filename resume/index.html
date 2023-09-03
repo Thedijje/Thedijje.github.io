@@ -38,7 +38,9 @@
         <link href="https://thedijje.com/assets/img/display-picture-dheeraj-jha.png" rel="apple-touch-icon">
       </head>
 <body style="padding:0px;margin:0px;">
-    <embed src="../assets/document/Dheeraj-resume.pdf" id="pdf-iframe" class="resume_viewport">
+    <div id="pdf-container">
+        <embed src="../assets/document/Dheeraj-resume.pdf" id="pdf-embed" class="resume_viewport">
+    </div>
 
     <style>
         .resume_viewport{
@@ -48,26 +50,23 @@
     </style>
 
     <script>
-        function supportsPDFInIFrame() {
+        function supportsPDFInEmbed() {
             // Create a temporary iframe element
-            const tempIframe = document.createElement('iframe');
+            const tempIframe = document.createElement('embed');
             
             // Check if the browser supports the 'application/pdf' MIME type
-            const supportsPDF = tempIframe.sandbox.supports('application/pdf');
-            
-            // Remove the temporary iframe
-            tempIframe.remove();
+            const supportsPDF = tempEmbed.type === 'application/pdf';
             
             return supportsPDF;
         }
 
         window.onload = function() {
-            const pdfIframe = document.getElementById('pdf-iframe');
+            const pdfEmbed = document.getElementById('pdf-embed');
             const pdfUrl = '../assets/document/Dheeraj-resume.pdf';
 
-            if (supportsPDFInIFrame()) {
+            if (supportsPDFInEmbed()) {
                 // Set the PDF URL as the iframe source
-                pdfIframe.src = pdfUrl;
+                pdfEmbed.src = pdfUrl;
             } else {
                 // Redirect to the PDF URL if embedding is not supported
                 window.location.href = pdfUrl;
